@@ -1,0 +1,75 @@
+{
+  "questions": [
+    {
+      "question": "What is the difference between var, let, and const?",
+      "answers": [
+        "Var is global or function-scoped, let is block-scoped, and const is not reassignable.",
+        "Var is global, let is block-scoped, and const is reassignable.",
+        "Var is block-scoped, let is global, and const is not reassignable.",
+        "Var is block-scoped, let is global, and const is reassignable."
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "What is a function closure?",
+      "answers": [
+        "A closure has access to variables in its scope even after it closes.",
+        "A closure is a function passed to another function as an argument.",
+        "A closure is an object for asynchronous operations.",
+        "A closure is a data-interchange format."
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "What is the difference between == and ===?",
+      "answers": [
+        "== performs type coercion, === does not.",
+        "== does not perform type coercion, === does.",
+        "== compares values, === compares types and values.",
+        "== compares types, === compares values."
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "What is the event loop?",
+      "answers": [
+        "The event loop allows JavaScript to handle multiple events.",
+        "The event loop is a tree-structured representation of a web page.",
+        "The event loop is a blueprint for creating objects.",
+        "The event loop is an object for asynchronous operations."
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "What is the DOM?",
+      "answers": [
+        "The DOM allows JavaScript to handle multiple events.",
+        "The DOM is a tree-structured representation of a web page.",
+        "The DOM is a blueprint for creating objects.",
+        "The DOM is an object for asynchronous operations."
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "question": "What is the difference between a class and a prototype?",
+      "answers": [
+        "A class creates objects, a prototype is the object of a class.",
+        "A class represents a web page, a prototype creates objects.",
+        "A class is an object for asynchronous operations, a prototype is a data-interchange format.",
+        "A class is a closure, a prototype is a callback function."
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "question": "What is a callback function?",
+      "answers": [
+        "A callback has access to variables in its scope even after it closes.",
+        "A callback is passed to another function as an argument and called back later.",
+        "A callback is an object for asynchronous operations.",
+        "A callback is a data-interchange format..."
+      ],
+      
+"correctAnswer": 1
+    }
+  ]
+}

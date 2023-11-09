@@ -1,0 +1,27 @@
+.d-flex{
+    display: flex;
+}
+.f-bettween{
+  justify-content: space-between;
+}
+.f-evenly{
+    justify-content: space-evenly;
+}
+.t-c{
+    text-align: center;
+}
+.back-w{
+    background-color: white;
+}
+.b-rad-7{
+    border-radius: 7px;
+}
+.over-hid{
+    overflow: hidden;
+}
+.p-15{
+    padding: 15px;
+}
+.m-0{
+    margin: 0;
+}
