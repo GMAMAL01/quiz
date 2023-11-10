@@ -3,18 +3,21 @@ let currentQ = document.querySelector("footer span.currentQ")
 let labels = document.querySelectorAll("label")
 let radios = document.querySelectorAll("input.radio")
 let Button = document.querySelector("button.next")
+let previous = document.querySelector("button.previous")
 let Tilte = document.querySelector("p.title")
 let bar = document.querySelector(".bar span")
 let timer = document.querySelector("header p span")
 let score = document.querySelector(".score")
 let percentage = document.querySelector(".score .percentage")
 let percentageSpan = document.querySelector(".score .percentage span")
+let review = document.querySelector(".score  .review")
 let current = 0
 let currentQN = 1
 let correctAnswers = 0 
 let interval 
 let counter = 0
-
+let Time = 20
+let scale = 10
 function data(){
 let request = new XMLHttpRequest()
 request.open("GET", "data.json", true)
@@ -24,7 +27,7 @@ request.onreadystatechange = function(){
         let random = jsopject["questions"].sort((a, b) => .5 - Math.random())
         showData(random[current], random.length, 0)
         data(random, random.length)
-        intervel(10,  random.length)
+        intervel(Time,  random.length)
      
     }
   }
@@ -41,7 +44,7 @@ request.onreadystatechange = function(){
       }
       if (current !== (length - 1)){
         clearInterval(interval)
-        intervel(10,  random.length)
+        intervel(Time,  random.length)
         current++
         currentQN++
         showData(random[current], random.length, 0)
@@ -50,6 +53,7 @@ request.onreadystatechange = function(){
         Button.style.cssText  = `
        pointer-events: none;
         `
+        clearInterval(interval)
         score.style.cssText = `display: block;`
         let stop = Math.round(correctAnswers / length * 100)
        let counterin = setInterval(() => {
@@ -57,15 +61,25 @@ request.onreadystatechange = function(){
 
           counter++
         }
+        scale++
         percentageSpan.textContent  = `${counter}%`
         
-        percentage.style.cssText = `background-image: conic-gradient(#356496 ${counter * 3.6}deg, white 0deg);`
+        percentage.style.cssText = `background-image: conic-gradient(#e88232 ${counter * 3.6}deg, white 0deg);
+        scale: 1.0${scale};`
           if (counter === stop){
             clearInterval(counterin)
           }
-        }, 20);
+        }, 15);
       }
 
+    })
+    previous.addEventListener("click", function(){
+      if(current !== 0){
+        current--
+        currentQN--
+
+      }
+      showData(random[current], random.length, 0)
     })
   }
   
@@ -80,7 +94,8 @@ request.send()
           Button.click()
         }
       }
-      timer.innerHTML = `0${time}`
+      time = time < 10 ? `0${time}` : time
+      timer.innerHTML = time
     }, 1000);
   }
 }
@@ -97,3 +112,8 @@ function showData(data, number, num){
     width: calc((100% / ${number})* ${currentQN});
   `
 }
+review.addEventListener("click", function(){
+  score.style.cssText = `display: none;`
+  Button.style.cssText = `display: none;`
+  previous.style.cssText = `display: block;`
+})

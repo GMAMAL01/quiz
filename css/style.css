@@ -1,9 +1,9 @@
 *{
-    --backgorund-color: #356496;
+    --backgorund-color: #22283e;
     --answer-color:#f0f8ff;
     --rightanswer-color: #d4edda;
     --ronganswer-color: #f8d7da;
-    --timer-color: #cee7ff;
+    --timer-color: #cdd9e8;
     margin: 0;
     padding: 0;
     --main-padding: 15px;
@@ -23,6 +23,7 @@
     box-shadow: 0 0 5px 1px black;
     min-width: 630px;
     
+    
 }
 
 header{
@@ -30,6 +31,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: var(--main-padding);
+    background-color: #2e425a;
 }
 header p {
     background-color: var(--timer-color);
@@ -39,7 +41,7 @@ header p {
 
 }
 header p span {
-    background-color: black;
+    background-color: #e88232;
     color: #ffff;
     padding: 3px 6px;
     border-radius: 5px;
@@ -51,6 +53,7 @@ h2{
     margin: 0;
     padding: 0;
     text-transform: capitalize;
+    color: #ebebeb;
 }
 div.bar{
     background-color: #ebebeb;
@@ -60,15 +63,17 @@ div.bar span {
     display: block;
     height: 100%;
     transition: .3s;
-    background-color: var(--backgorund-color);
+    background-color: #e88232;
 }
 div.cheet {
     padding: var(--main-padding);
+    background-color: #ebebeb;
+    min-height: 433px;
 }
 p.title {
     font-size: 30px;
     font-weight: 500;
-    
+    max-width: 680px;
 }
 input[type="radio"] {
     display: none;
@@ -77,15 +82,50 @@ input[type="radio"] {
 label {
     background-color: var(--answer-color);
     display: block;
-    padding: 5px var(--main-padding);
+    padding:10px var(--main-padding);
     font-size: 25px;
     margin: 15px 0;
     border-radius: 5px;
-    border: 3px solid #cee7fe;
+    border: 1px solid #cfd1d9;
     max-width: 600px;
+    position: relative;
+    padding-left: 40px;
+    transition: .3s;
+}
+label:before{
+    content: "A";
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ebebeb;
+    background-color: #e88232;
+    font-size: 20px;
+    border-radius: 50%;
+}
+input[type="radio"]#second + label::before {
+    content: "B";
+}
+input[type="radio"]#third + label::before {
+    content: "C";
+}
+input[type="radio"]#forth + label::before {
+    content: "D";
 }
 input[type="radio"]:checked + label {
-    background-color: #d1e8f9;
+    background-color: #e88232;
+    padding-left: 20px;
+   
+}
+input[type="radio"]:checked + label::before {
+    content: "";
+    display: none;
+
 }
 footer{
     border-top: 5px solid #ededed;
@@ -98,9 +138,9 @@ footer p {
     font-size: 20px;
     font-weight: 500;
 }
-footer button{
+ button{
     background-color: var(--backgorund-color);
-    color: white;
+    color: #cdd9e8;
     padding: 8px 10px;
     font-size: 20px;
     border-radius: 5px;
@@ -111,34 +151,40 @@ footer button{
     cursor: pointer;
     transition: 0.3s;
 }
-footer button:hover{
+ button:hover{
     scale: 1.04;
 }
 .score{
     position: absolute;
-    background-color: white;
+    background-color: #f0f8ff;
     border: 3px solid var(--backgorund-color);
     border-radius: 5px;
 
 }
 .score .title{
-    font-size: 30px;
+    font-size: 20px;
     padding: 5px 20px;
+    text-align: center;
+    line-height: 1.5;
+    margin: 5px 0 0 0;
+}
+.score .title .green {
+    color: #3eae7b;
+    font-weight: bold;
 }
 .score .percentage {
     border-radius: 50%;
-    
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: #e88232;
     font-weight: bold;
     font-size: 20px;
     position: relative;
     margin: 0 auto;
-    
+    margin-top: 20px;
 
 }
 .score .percentage span {
@@ -177,8 +223,7 @@ hr{
 .review{
     display: block;
     margin: 20px auto;
-    border: #356496 1px solid;
-    padding: 5px;
-    font-size: 20px;
-    
+}
+.previous {
+    display: none;
 }
