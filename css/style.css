@@ -1,3 +1,6 @@
+body{
+    margin: 0;
+}
 *{
     --backgorund-color: #22283e;
     --answer-color:#f0f8ff;

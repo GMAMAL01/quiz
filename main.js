@@ -91,7 +91,9 @@ request.onreadystatechange = function(){
       score.style.cssText = `display: none;`
       Button.style.cssText = `display: none;`
       previous.style.cssText = `display: block;`
-      radios[0].checked = false
+      for(i = 0; i < radios.length; i++){
+        radios[i].checked = false
+      }
       labels[random[current]["correctAnswer"]].classList.add("correct")
     })
   }
