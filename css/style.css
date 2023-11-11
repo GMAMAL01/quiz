@@ -227,3 +227,18 @@ hr{
 .previous {
     display: none;
 }
+.correct {
+    background-color: #3eae7b;
+}
+@media (max-width:684px ) {
+    .widged{
+        min-width: 300px;
+        
+    }
+    p.title {
+        font-size: 25px;
+    }
+    label{
+        font-size: 20px;
+    }
+}

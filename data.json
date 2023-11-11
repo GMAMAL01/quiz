@@ -8,7 +8,7 @@
         "Var is block-scoped, let is global, and const is not reassignable.",
         "Var is block-scoped, let is global, and const is reassignable."
       ],
-      "correctAnswer": 0
+      "correctAnswer": 1
     },
     {
       "question": "What is a function closure?",
@@ -18,7 +18,7 @@
         "A closure is an object for asynchronous operations.",
         "A closure is a data-interchange format."
       ],
-      "correctAnswer": 0
+      "correctAnswer": 2
     },
     {
       "question": "What is the difference between == and ===?",
@@ -28,7 +28,7 @@
         "== compares values, === compares types and values.",
         "== compares types, === compares values."
       ],
-      "correctAnswer": 0
+      "correctAnswer": 3
     },
     {
       "question": "What is the event loop?",

@@ -28,6 +28,7 @@ request.onreadystatechange = function(){
         showData(random[current], random.length, 0)
         data(random, random.length)
         intervel(Time,  random.length)
+        
      
     }
   }
@@ -74,15 +75,26 @@ request.onreadystatechange = function(){
 
     })
     previous.addEventListener("click", function(){
+      for(i = 0; i < labels.length; i++){
+        labels[i].classList.remove("correct")
+      }
       if(current !== 0){
         current--
         currentQN--
 
       }
       showData(random[current], random.length, 0)
+      radios[0].checked = false
+      labels[random[current]["correctAnswer"]].classList.add("correct")
+    })
+    review.addEventListener("click", function(){
+      score.style.cssText = `display: none;`
+      Button.style.cssText = `display: none;`
+      previous.style.cssText = `display: block;`
+      radios[0].checked = false
+      labels[random[current]["correctAnswer"]].classList.add("correct")
     })
   }
-  
 
 request.send()
   function intervel(time, length){
@@ -112,8 +124,4 @@ function showData(data, number, num){
     width: calc((100% / ${number})* ${currentQN});
   `
 }
-review.addEventListener("click", function(){
-  score.style.cssText = `display: none;`
-  Button.style.cssText = `display: none;`
-  previous.style.cssText = `display: block;`
-})
+
